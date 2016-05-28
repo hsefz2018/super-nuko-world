@@ -3,23 +3,23 @@
 
 ## Contest materials
 
-#### `problems/`
+#### problems/
 题目描述的 PDF 文件。
 
-#### `problems/tex/`
+#### problems/tex/
 生成 PDF 文件的 LaTeX 源文件和图像。
 ```bash
     $ xelatex *.tex
 ```
 
-#### `data/`
+#### data/
 测试数据（ZIP）。文件命名格式为 `<Subtask%d>-<Testcase%02d>.[in|out]`
 （例如第一个子任务的第三个测试点命名为 `1-03.[in|out]`）。
 
-#### `data/*-gen/`
+#### data/*-gen/
 用于生成测试数据的程序。直接编译运行即可。
 
-#### `checkers/`
+#### checkers/
 Special Judge 程序。按照 CMS 的文档，在服务器上使用下列命令编译：
 ```bash
     $ g++ -o nekojyarashi-checker nekojyarashi-checker.cpp -static
@@ -27,7 +27,7 @@ Special Judge 程序。按照 CMS 的文档，在服务器上使用下列命令�
     $ scp root@xx.xx.xx.xx:/path/to/checker/*-checker .
 ```
 
-#### `std/`
+#### std/
 （一点也不标准的）参考程序。C++/Pascal。
 
 ## Original problems
