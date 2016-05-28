@@ -1,0 +1,146 @@
+\documentclass[UTF8, 11pt, a4paper]{article}
+\usepackage[cm]{sfmath}
+\usepackage{tabularx}
+\def\arraystretch{1.3}
+\usepackage[a4paper, top=3.18cm,bottom=3.81cm,left=2.54cm,right=2.54cm]{geometry}
+\usepackage{indentfirst}
+\setlength{\parskip}{6pt}
+\XeTeXlinebreaklocale "zh"
+\usepackage{graphicx}
+\usepackage[normalem]{ulem}
+
+\usepackage{fontspec}
+\setmainfont{思源黑体}
+\SetSymbolFont{largesymbols}{normal}{OMX}{iwona}{m}{n}
+\setmonofont{Source Code Pro}
+
+\begin{document}
+\section*{狗尾草 / Nekojyarashi}
+
+\subsection*{描述}
+Nuko 一直用菜园里冒出来的狗尾草去逗旁边草坪上的猫咪，致使它们产生了抗性，%
+狗尾草很快就要失去作用了。
+
+但是最近 Nuko 有了激动人心的新发现：一个存在于狗尾草上被称为 “Nyan 环” 的东西，%
+这个发现简直可以造个大新闻！%
+简而言之，一棵狗尾草可以由一些节点和它们之间的无向边来描述，一个节点可以%
+连出任意多条边，但是不会存在重边（重复的边）和自环（连向自己的边）。%
+一个 Nyan 环是一个包括奇数个节点（至少 3 个）的简单环（每个节点至多只经过一次的环）。%
+Nuko 经过研究发现带有 Nyan 环的狗尾草可以大大增加猫从猫窝里出来的几率。
+
+Mafu 刚从 Nuko 的园子里坑出来一大把狗尾草，也打算利用 Nyan 环把猫咪引出来玩。%
+Mafu 经过另外的研究，学会了把两个狗尾草节点连接起来的办法。%
+急切地想要实现这个愿望的 Mafu 打算在这一团狗尾草之间制造出 Nyan 环。%
+Mafu 很想知道下面两个问题的答案：
+\begin{enumerate}
+    \item 在这团狗尾草里制造一个 Nyan 环至少需要添加多少条边；
+    \item 有多少种这样的最优方案。
+\end{enumerate}
+
+\subsection*{输入 \makebox[0.5em]{} \small{nekojyarashi.in}}
+\begin{itemize}
+    \item 第 1 行：两个正整数 $N$、$M$，分别表示这团狗尾草的节点数和边数。
+    \item 接下来 $M$ 行：每行包含两个正整数 $u_i$、$v_i$，%
+        表示节点 $u_i$ 和 $v_i$ 之间有一条无向边连接。%
+        节点从 1 编号至 $N$。整张图\uwave{不}保证联通。
+\end{itemize}
+
+\subsection*{输出 \makebox[0.5em]{} \small{nekojyarashi.out}}
+\begin{itemize}
+    \item 第 1 行：一个整数，表示为了形成 Nyan 环需要添加的最少边数 $T$。
+    \item 第 2 行：一个整数，表示添加 $T$ 条边形成至少一个 Nyan 环的不同方案数 $W$。
+        两种方案不同当且仅当它们添加的边的集合不同。
+\end{itemize}
+
+\subsection*{样例}
+\begin{table}[h]\centering
+\begin{tabularx}{0.8 \textwidth}{|X|X|}
+\hline
+\texttt{\textbf{nekojyarashi1.in}} & \texttt{\textbf{nekojyarashi1.out}} \\ \hline
+{\ttfamily
+4 4\newline
+1 2\newline
+1 3\newline
+4 2\newline
+4 3
+} & {\ttfamily
+1\newline
+2
+}
+\\ \hline
+\end{tabularx}\end{table}
+\subsubsection*{样例一 说明}
+在 (2, 3) 或者 (1, 4) 之间添加一条边都可以形成长度为 3 的环（而且还不止一个！OvO）
+\newline\newline
+
+\begin{table}[h]\centering
+\begin{tabularx}{0.8 \textwidth}{|X|X|}
+\hline
+\texttt{\textbf{nekojyarashi2.in}} & \texttt{\textbf{nekojyarashi2.out}} \\ \hline
+{\ttfamily
+3 3\newline
+1 2\newline
+2 3\newline
+3 1
+} & {\ttfamily
+0\newline
+1
+}
+\\ \hline
+\end{tabularx}\end{table}
+\subsubsection*{样例二 说明}
+不用添加任何边，1--2--3 本身就是一个包含 3 个节点的 Nyan 环。
+\newline\newline
+
+\begin{table}[h]\centering
+\begin{tabularx}{0.8 \textwidth}{|X|X|}
+\hline
+\texttt{\textbf{nekojyarashi3.in}} & \texttt{\textbf{nekojyarashi3.out}} \\ \hline
+{\ttfamily
+3 0
+} & {\ttfamily
+3\newline
+1
+}
+\\ \hline
+\end{tabularx}\end{table}
+
+\subsection*{数据规模}
+\begin{table}[h]\centering
+\begin{tabularx}{0.8 \textwidth}{X|X|X|X}
+子任务 & pts & $N$             & 附加条件 \\ \hline\hline
+1      & 10  & $= 3$           & - \\ \hline
+2      & 5   & $\leq 100\,000$ & $M \leq 1$ \\ \hline
+3      & 20  & $\leq 100$      & - \\ \hline
+4      & 15  & $\leq 1\,000$   & - \\ \hline
+5      & 17  & $\leq 100\,000$ & 每个点连出的边数不超过 2 \\ \hline
+6      & 33  & $\leq 100\,000$ & - \\
+\end{tabularx}\end{table}
+另外，对于所有的数据，保证 $N \geq 3$，$M \leq \min\{\frac{n(n-1)}{2}, 100\,000\}$，%
+不存在重边和自环，\uwave{不保证}图联通！！
+
+\subsubsection*{特殊的评分方式}
+本题采用 Special Judge 对程序的输出进行评分。具体来说，对于每个测试点：
+\begin{itemize}
+    \item 如果程序输出格式错误（包括但不限于输出非数字、%
+        输出浮点数如 “3.00”、输出 “QAQ”），评测机会表示很不高兴，将该测试点判作 0 分；
+    \item 其他情况下，如果程序输出的第一问答案 $T$ 不正确，该测试点获得 0\% 的分数；
+    \item 其他情况下，如果程序输出的第二问答案 $W$ 不正确，该测试点获得 30\% 的分数；
+    \item 其他情况下，该测试点获得 100\% 的分数。
+\end{itemize}
+对于每个子任务，获得的分数是程序在该子任务下所有测试点得分%
+的最小值与该子任务总分的乘积。本题获得的总分是所有子任务得分之和%
+四舍五入取整后的值。
+
+\subsection*{限制}
+\begin{itemize}
+\item 时间：1.0 秒
+\item 内存：256 MiB
+\end{itemize}
+
+\begin{figure}[h]\centering
+\includegraphics[width=0.6 \textwidth]{nekojyarashi.png}
+\end{figure}
+
+\end{document}
+
