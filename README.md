@@ -45,7 +45,7 @@ Special Judge 程序。按照 CMS 的文档，在服务器上使用下列命令�
 * __3. Nekojyarashi__:
     Codeforces Round #311 (Div. 2)  
     [D. Vitaly and Cycle](http://codeforces.com/contest/557/problem/D)  
-    [出题人题解](codeforces.com/blog/entry/18943)  
+    [出题人题解](http://codeforces.com/blog/entry/18943)  
     在线测评：Codeforces 557D
 
 * __4. Hako__:
