@@ -115,5 +115,7 @@ Special Judge 程序。按照 CMS 的文档，在服务器上使用下列命令�
 题面描述和其余数据在 [CC BY International 4.0](https://creativecommons.org/licenses/by/4.0/) 下发布。  
 源码在 [MIT/Expat](./LICENSE) 下发布。
 
+感谢 [@yesterday17](https://github.com/yesterday17) 同学的测评服务器。
+
 感谢大家的参与 =u=
 
