@@ -52,8 +52,8 @@ Special Judge 程序。按照 CMS 的文档，在服务器上使用下列命令�
     自己 YY 的= =
 
 所有题目名称 & 题面来源于 Vocaloid 曲『すーぱーぬこわーるど（超级喵世界）』（词曲：まふまふ，Vocal：IA feat. 鏡音リン）  
-[Original / Niconico](http://www.nicovideo.jp/watch/sm22491239)  
-[Cover by ゆいこんぬ＆あやぽんず＊ / Niconico](http://www.nicovideo.jp/watch/sm22944873)  
+[Original / Niconico](http://www.nicovideo.jp/watch/sm22491239) [Bilibili](http://www.bilibili.com/video/av879378/)  
+[Cover by ゆいこんぬ＆あやぽんず＊ / Niconico](http://www.nicovideo.jp/watch/sm22944873) [Bilibili](http://www.bilibili.com/video/av978370/)  
 [osu!](https://osu.ppy.sh/s/153776)  
 
 ## The server
