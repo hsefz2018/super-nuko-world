@@ -9,7 +9,7 @@
 #### problems/tex/
 生成 PDF 文件的 LaTeX 源文件和图像。
 ```bash
-    $ xelatex *.tex
+    $ xelatex <Problem>.tex
 ```
 
 #### data/
@@ -24,7 +24,7 @@ Special Judge 程序。按照 CMS 的文档，在服务器上使用下列命令�
 ```bash
     $ g++ -o nekojyarashi-checker nekojyarashi-checker.cpp -static
     $ g++ -o hako-checker hako-checker.cpp -static
-    $ scp root@xx.xx.xx.xx:/path/to/checker/*-checker .
+    $ scp root@xx.xx.xx.xx:/path/to/checker ./*-checker
 ```
 
 #### std/
